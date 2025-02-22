@@ -9,7 +9,7 @@ export class Lug {
   }
 
   static create(schema) {
-    return new Validation(schema);
+    return new Lug(schema);
   }
 
   clean() {
