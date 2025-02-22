@@ -1,7 +1,7 @@
 import { Either } from './Either';
 import { NO_RULES_SETTED_MESSAGE } from './const';
 
-export class Lug {
+class Lug {
   constructor(schema) {
     this.schema = schema;
     this._valid = {};
