@@ -28,6 +28,12 @@ export class Lug {
     const [name, value] = Object.entries(hash).flat();
     const { rules } = this.schema[name];
 
+    if (!rules.length) {
+      return this._errors.push({
+        message: `The ${name} ${NO_RULES_SETTED_MESSAGE}`,
+      });
+    }
+
     rules.reverse().forEach((rule) => {
       if (rule?.test(value)) {
         return (this._valid[name] = value);
@@ -46,17 +52,10 @@ export class Lug {
   }
 
   validate(values) {
-    Object.entries(this.schema).forEach(
-      ([name = '', validationRule = []]) => {
-
-        if (!validationRule.rules.length) {
-          return this._errors.push({
-            message: `The ${name} ${NO_RULES_SETTED_MESSAGE}`,
-          });
-        }
-
+    Object.entries(values).forEach(
+      ([name = '', value]) => {
         this.perform({
-          [name]: values?.[name]
+          [name]: value
         });
       },
     );
