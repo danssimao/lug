@@ -63,3 +63,5 @@ export class Lug {
     return this.retrieve();
   }
 }
+
+export const lug = (schema) => Lug.create(schema);
