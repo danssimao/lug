@@ -1,4 +1,4 @@
-export class LugRule {
+class LugRule {
   constructor(rules = []) {
     this.add(rules);
   }
