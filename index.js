@@ -1,2 +1,2 @@
-export * from './Lug';
-export * from './LugRule';
+export * from './Trophy';
+export * from './TrophyRule';

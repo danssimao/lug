@@ -1,7 +1,7 @@
 import { Either } from './Either';
 import { NO_RULES_SETTED_MESSAGE } from './const';
 
-class Lug {
+class Trophy {
   constructor(schema) {
     this.schema = schema;
     this._valid = {};
@@ -9,7 +9,7 @@ class Lug {
   }
 
   static create(schema) {
-    return new Lug(schema);
+    return new Trophy(schema);
   }
 
   clean() {
@@ -64,4 +64,4 @@ class Lug {
   }
 }
 
-export const lug = (schema) => Lug.create(schema);
+export const Trophy = (schema) => Trophy.create(schema);

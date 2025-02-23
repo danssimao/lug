@@ -1,4 +1,4 @@
-class LugRule {
+class TrophyRule {
   constructor(rules = []) {
     this.add(rules);
   }
